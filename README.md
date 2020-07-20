@@ -3,4 +3,4 @@ A 16-days journey to learn NLP from scratch. This is a competition about classif
 这个比赛是由阿里云天池& Datawhale零基础NLP赛事组织举办的。 
 
 ## 学习笔记
-- [1. **Task01: 赛题理解**](https://github.com/biaochenxuying/blog/issues/45)
+- [1. **Task01: 赛题理解**](https://github.com/y25xiang/blog/issues/1)
