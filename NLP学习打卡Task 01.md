@@ -96,9 +96,13 @@ BERT(Bidirectional Encoder Representation from Transformers) 是一款高配的�
 
 ## 参考文献
 【1】百度百科. https://baike.baidu.com/item/F1分数/13864979?fr=aladdin
+
 【2】Wikipedia. https://en.wikipedia.org/wiki/Precision_and_recall
+
 【3】Taylor, C. (2018, March 8). Structured vs. Unstructured Data. Retrieved July 20, 2020, from https://www.datamation.com/big-data/structured-vs-unstructured-data.html
+
 【4】NLP 的词向量：https://www.infoq.cn/article/PFvZxgGDm27453BbS24W
+
 【5】Machine Learning Crash Course from Google: https://developers.google.com/machine-learning/crash-course/embeddings/translating-to-a-lower-dimensional-space
 ![close-up-of-scrabble-tiles-forming-the-words-the-end-2889685](https://user-images.githubusercontent.com/61811515/87973752-028eb200-ca97-11ea-8a78-5ef5073f5aee.jpg)
 
