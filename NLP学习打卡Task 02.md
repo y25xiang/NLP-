@@ -3,7 +3,7 @@
 
 [image](https://healthitanalytics.com/news/machine-learning-uses-social-determinants-data-to-predict-utilization)
 
-这次打卡让我们的数据进行一波分析，观察一下数据有什么规律。 
+这次打卡让我们对数据进行一波分析，观察一下数据有什么规律。 
 
 为方便将类别作为further reference，将每个类别与编号的对应放在下面：
 {‘科技’：0，‘股票’：1，‘体育’：2，‘娱乐’：3，‘时政’：4，‘社会’：5，‘教育’：6，‘财经’：7，‘家居’：8，‘游戏’：9，‘房产’：10，’时尚‘：11，’彩票‘：12，’星座‘：13}
