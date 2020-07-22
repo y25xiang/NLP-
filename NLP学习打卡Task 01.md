@@ -19,20 +19,26 @@
 
 ### 比赛测评标准
 比赛的测评标准采用了F1 score。 那么问题来了，什么是F1 score呢？ 
-F1 score 是一种测量准确度的常用指标。F1 score 被定义为精准率和查全率的调和平均数，取值范围在0到1之间。 公式定义如下： 
+F1 score 是一种测量准确度的常用指标。F1 score 被定义为精准率和查全率的调和平均数，取值范围在0到1之间。 公式定义如下图： 
+
+
 <img width="288" alt="f1" src="https://user-images.githubusercontent.com/61811515/87957811-c51e2a80-ca7e-11ea-8fe0-30eb0e167440.png"> 【1】
 
 精准率(Precision)指的是在所有数据中里有多少内容被正确分类。具体公式如下图： 
+
+
 <img width="484" alt="precision" src="https://user-images.githubusercontent.com/61811515/87958176-33fb8380-ca7f-11ea-8dc6-bee085189349.png"> 【2】
 
-
 查全率(Recall Ratio)指的是分类正确的内容占那个类别的总量比。 举个具体例子Group A 总共有a个数据，其中b个被正确分类，那么 b/a 就是我们所说的查全率。 具体公式如下图：
+
+
 <img width="446" alt="recall" src="https://user-images.githubusercontent.com/61811515/87958121-247c3a80-ca7f-11ea-8614-bccc804cd39d.png"> 【2】
 
 因为我们希望model 可以在精准率和查全率越高越好。这也告诉我们高F1 score 会是我们测试model的标准。 
 
 ### 数据初探
 简单的将数据用pandas load 了一遍，以下是数据的例子。 
+
 
 ![data preview](https://user-images.githubusercontent.com/61811515/87950927-ee868880-ca75-11ea-8a1f-96acc17c3bca.png)
 
@@ -52,6 +58,7 @@ F1 score 是一种测量准确度的常用指标。F1 score 被定义为精准�
 
 对训练集的分布如下图：
 
+
 ![distribution](https://user-images.githubusercontent.com/61811515/87968103-e6d2de00-ca8d-11ea-959f-82e4da7536f8.JPG)
 
 可以看到每个组的数据量分布不均匀。数据分布不均会对model的影响之后在学习笔记中会继续讨论。  
@@ -62,8 +69,8 @@ F1 score 是一种测量准确度的常用指标。F1 score 被定义为精准�
 在介绍思路之前，我们需要了解一个概念，词向量。 在自然语言学习中，我们需要尽可能地让我们的计算机能明白词的意思，以此来提高任务的准确性。因此如何在计算机中表示每个词成为了一个很重要的问题。
 而词向量技术则是将词转化为向量，对于相似的词其对应的词向量也会相近。 由此让我们的计算机可以理解文字的意思。 下图为其中一些例子：
 
-<img width="910" alt="words" src="https://user-images.githubusercontent.com/61811515/87974394-0242e680-ca98-11ea-902d-3dbafba76013.png"> 【5】
 
+<img width="910" alt="words" src="https://user-images.githubusercontent.com/61811515/87974394-0242e680-ca98-11ea-902d-3dbafba76013.png"> 【5】
 
 接下来让我们一起看看解题思路吧。 
 对于非结构化数据，可能涉及到特征提取和分类模型两个部分。 以下是四种解题思路： 
@@ -72,6 +79,7 @@ F1 score 是一种测量准确度的常用指标。F1 score 被定义为精准�
 #### TF-IDF
 TF-IDF, short for term frequency-Inverse document frequency 被用来衡量一个单词在一个文本里的重要性。 常被用来作为比重。 TF-IDF 与文字在文本中出现的次数成正比，
 同时与它在文本中的出现次数成反比。 计算公式如下图：
+
 
 <img width="349" alt="tfidf" src="https://user-images.githubusercontent.com/61811515/87969753-ba6c9100-ca90-11ea-8fa8-640f6fd1bfa3.png">
 
