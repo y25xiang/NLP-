@@ -30,6 +30,7 @@ F1 score 是一种测量准确度的常用指标。F1 score 被定义为精准�
 
 
 <img width="484" alt="precision" src="https://user-images.githubusercontent.com/61811515/87958176-33fb8380-ca7f-11ea-8dc6-bee085189349.png"> 【2】
+
 查全率(Recall Ratio)指的是分类正确的内容占那个类别的总量比。 举个具体例子Group A 总共有a个数据，其中b个被正确分类，那么 b/a 就是我们所说的查全率。 具体公式如下图：
 
 
