@@ -68,7 +68,7 @@ TF-IDF, short for term frequency-Inverse document frequency 被用来衡量一�
 
 以下几种方法都涉及到了分布式假设。换句话说就是相同上下文语境的词有相似的含义。 根据这个对词向量进行了优化。 
 * FastText
-FastText 是一种词向量，利用Facebook 提供的FastText 工具，可以快速构建出分类模型。 
+FastText 是一种词向量，利用Facebook 提供的FastText工具，可以快速构建出分类模型。 
 相关的document 链接：https://fasttext.cc/docs/en/support.html
 
 * Word2Vec + 深度学习分类器
