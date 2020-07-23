@@ -5,3 +5,4 @@ A 16-days journey to learn NLP from scratch. This is a competition about classif
 ## 学习笔记
 - [1. **Task01: 赛题理解**](https://github.com/y25xiang/NLP-/blob/master/NLP学习打卡Task%2001.md)
 - [2. **Task02: 数据导入与分析**](https://github.com/y25xiang/NLP-/blob/master/NLP学习打卡Task%2002.md)
+- [3. **Task03: 基于机器学习的文本分类**](https://github.com/y25xiang/NLP-/blob/master/NLP学习打卡Task%2003.md)
