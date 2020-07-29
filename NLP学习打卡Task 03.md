@@ -45,44 +45,48 @@
 通常在机器学习训练的过程，若我们有N个样本，每个样本有M个特征，则我们会得到一个NxM 的矩阵。 但文本处于非结构数据，没有固定长度。 因此我们需要使用词嵌入（Word Embedding） 将长度不定的文本转化成为定长的空间。 
  
 * One-Hot 
-One-Hot 对每个单词使用了离散的向量，将每个字/词对应了一个索引，然后根据索引进行赋值。 
-例如：{ 机：1， 器：2，学：3，习：4 ，有：5，趣：6}，分别对应了6维度稀疏向量：
-机：[1,0,0,0,0,0]
-器：[0,1,0,0,0,0]
-学：[0,0,1,0,0,0]
-习：[0,0,0,1,0,0]
+
+ One-Hot 对每个单词使用了离散的向量，将每个字/词对应了一个索引，然后根据索引进行赋值。 
+ 例如：{ 机：1， 器：2，学：3，习：4 ，有：5，趣：6}，分别对应了6维度稀疏向量：
+ 机：[1,0,0,0,0,0]
+ 器：[0,1,0,0,0,0]
+ 学：[0,0,1,0,0,0]
+ 习：[0,0,0,1,0,0]
 
 * Bag of Words
-Bag of Words 也称Count Vectors，每个文档的字/词用出现次数表示。 
-例如： 机器学习 对应 [1,1,1,1,0,0]
-可通过sklearn中的CountVectorizer来实现。 下面是代码实例:
-```
-from sklearn.feature_extraction.text import CountVectorizer
-corpus = ['This is the first document.',
-'This document is the second document.', 'And this is the third one.',
-'Is this the first document?']
-vectorizer = CountVectorizer()
-vectorizer.fit_transform(corpus).toarray()
-```
+
+ Bag of Words 也称Count Vectors，每个文档的字/词用出现次数表示。 
+ 例如： 机器学习 对应 [1,1,1,1,0,0]
+ 可通过sklearn中的CountVectorizer来实现。 下面是代码实例:
+ ```
+ from sklearn.feature_extraction.text import CountVectorizer
+ corpus = ['This is the first document.',
+ 'This document is the second document.', 'And this is the third one.',
+ 'Is this the first document?']
+ vectorizer = CountVectorizer()
+ vectorizer.fit_transform(corpus).toarray()
+ ```
 
 * N-gram 
-N-gram 与bag of words 类似，但是它是取相邻的N个字符组合成一个新的单词并进行计数。 
-例子： 在N为2 的情况下，机器学习 对应 机器 器学 学习 再对其进行计数
+
+ N-gram 与bag of words 类似，但是它是取相邻的N个字符组合成一个新的单词并进行计数。 
+ 例子： 在N为2 的情况下，机器学习 对应 机器 器学 学习 再对其进行计数
 
 * TF-IDF
-TF-IDF 有两部分组成： 词语频率（Term Frequency) 和逆文档频率（Inverse Document Frequency）
-**词语频率**
-下面是词语频率的计算方法： 
-Term Frequency = 该词语在当前文档出现的次数/当前文档词语出现的总数
-**Motivation of term frequency 为什么用词语频率 **
-是因为我们在检索文章的时候我们会搜索相关词语，检索结果会根据你给出的相关词语对网上所有的文章内容进行相关排序，再将最相关的搜索结果反馈给用户。 一篇文章一个词语在整篇文章中的出现频率可以表现出这篇文章对于这个词语的相关程度。 
-**逆文档频率**
-下面是逆文档频率计算方法：
-Inverse Document Frequency = log_e(文档总数/出现该词语的文档总数） 
-**Motivation behind Inverse Document Frequency 为什么使用逆文档频率**
-有一些经常出现为词对整体意义贡献不大但出现频繁，例如中文中的的， 英文中的the。这一类词TF的数值会很高，但很多有意义的词会被忽略。因为逆文档频率缩小了经常出现在文档的词的比重，提高了相对偏少的词的比重。
 
-TF-IDF 则为两个频率的乘积 ie.TF-IDF = TF * IDF
+ TF-IDF 有两部分组成： 词语频率（Term Frequency) 和逆文档频率（Inverse Document Frequency）
+ **词语频率**
+ 下面是词语频率的计算方法： 
+ Term Frequency = 该词语在当前文档出现的次数/当前文档词语出现的总数
+ **Motivation of term frequency 为什么用词语频率 **
+ 是因为我们在检索文章的时候我们会搜索相关词语，检索结果会根据你给出的相关词语对网上所有的文章内容进行相关排序，再将最相关的搜索结果反馈给用户。 一篇文章一个词语在整篇文章中的出现频率可以表现出这篇文章对于这个词语的相关程度。 
+ **逆文档频率**
+ 下面是逆文档频率计算方法：
+ Inverse Document Frequency = log_e(文档总数/出现该词语的文档总数） 
+ **Motivation behind Inverse Document Frequency 为什么使用逆文档频率**
+ 有一些经常出现为词对整体意义贡献不大但出现频繁，例如中文中的的， 英文中的the。这一类词TF的数值会很高，但很多有意义的词会被忽略。因为逆文档频率缩小了经常出现在文档的词的比重，提高了相对偏少的词的比重。
+
+ TF-IDF 则为两个频率的乘积 ie.TF-IDF = TF * IDF
 
 ## Model 1: TF-IDF + Ridge Classifier
 ### Ridge Classifier
